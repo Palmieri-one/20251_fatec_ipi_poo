@@ -1,26 +1,35 @@
 package oo_parte2;
 import java.util.Random;
+import java.lang.reflect.*;
 public class JogoV2 {
     public static void main(String[] args) throws Exception {
         var gerador = new Random();
-        var p2 = new Personagem();
-        p2.nome = "Fernando";
+        var p = new Personagem();
+        var p1 = new Personagem ("Lebron", 10 , 10, 0);
+        var p2 = new Personagem ("Soneca",4,4, 10);
+        Personagem [] personagens = {p, p1, p2};
+
+        Class<?> clazz = Personagem.class;
+        Method[] metodosPublicos = clazz.getMethods();
+        System.out.println("Numero de metodos publicos:" + metodosPublicos.length);
+        Method [] metodosDeclarados = clazz.getDeclaredMethods();
+        System.out.println("Numero de metodos declarados:" + metodosDeclarados.length);
+
+        //loop do jogo
         while (true){
-        //1 = cacar
-        //2 = comer
-        //3 = dormir
+        var quemVaiJogar = gerador.nextInt(personagens.length);
         var oQueFazer = 1 + gerador.nextInt(3); // [0,2], ao adicionar o 1 + ele permite que fique entre 1 e 3
         switch (oQueFazer) {
             case 1:
-            p2.cacar();  
+            personagens[quemVaiJogar].cacar();  
             break;
             case 2:
-            p2.comer();
+            personagens[quemVaiJogar].comer();
             break;
             case 3:
-            p2.dormir();
+            personagens[quemVaiJogar].dormir();
         }    
-        System.out.println(p2);
+        System.out.println(personagens[quemVaiJogar]);
         Thread.sleep(4000);
 
         }

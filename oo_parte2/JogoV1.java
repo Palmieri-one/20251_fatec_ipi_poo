@@ -8,7 +8,6 @@ public class JogoV1 {
         // var (feito pelo compilador)
         // var p1 = new Personagem ();
         Personagem p1 = new Personagem(); //1 etapa
-        p1.nome = "Fernando"; //2 etapa
 
         p1.cacar(); //3 etapa
         p1.comer(); //3 etapa
