@@ -2,7 +2,7 @@ package oo_parte2;
 import java.util.Random;
 public class Personagem {
     
-    private String nome = null;
+    String nome = null;
     private String [] possiveisNomes = {"Steve", "Alex", "Mark"};
     private int energia;
     private int fome;

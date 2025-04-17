@@ -2,17 +2,9 @@ package sobrecarga;
 
 public class Calculadora {
 
-    // public long somar(long a, long b){
-    //     return a + b;
-    // }
-
-    // public double somar(long a, long b){
-    //     return a + b;
-    // }
-
-    // public long somar(long x, long y){
-    //     return x + y;
-    // }
+     public long somar(long a, long b){
+         return a + b;
+     }
 
     public long somar(String s1, String s2){
         return Long.parseLong(s1) + Long.parseLong(s2);
